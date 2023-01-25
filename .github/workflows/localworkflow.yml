@@ -7,7 +7,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-
 jobs:
   check-pr-description-validity:
     runs-on: ubuntu-latest
@@ -19,5 +18,5 @@ jobs:
         with:
           github-token: ${{ github.token }}
           script: |
-            const script = require('./.github/workflows/scripts/pr-description-check.js')
+            const script = require('./.github/workflows/scripts/pr-description-check.ts')
             await script({github, context, core})

@@ -1,7 +1,5 @@
 module.exports = async ({ github, context, core }) => {
 
-
-
 	const COMMENT_HEADER = "**No image found.**"
 	const COMMENT_BODY = "Image not found in the PR description. Please add an image to the PR description for every new key that you are adding. If you do not have an image, please request admin specifically."
 	const COMMENT_FOOTER = "If this PR is not introducing any new keys, you may ignore this message."
