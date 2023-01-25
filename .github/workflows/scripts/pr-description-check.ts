@@ -4,6 +4,7 @@ module.exports = async ({ github, context, core }) => {
 	const COMMENT_BODY = "Image not found in the PR description. Please add an image to the PR description for every new key that you are adding. If you do not have an image, please request admin specifically."
 	const COMMENT_FOOTER = "If this PR is not introducing any new keys, you may ignore this message."
 	const body = `${COMMENT_HEADER} \n${COMMENT_BODY} \n${COMMENT_FOOTER}`
+const imageRegex = /https?:\/\/.*\.(?:png|jpg)/
 
 	const prBody = context.payload.pull_request.body;
 	var hasImage = imageRegex.test(prBody);
