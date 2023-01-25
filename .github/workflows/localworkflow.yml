@@ -34,5 +34,5 @@ jobs:
         with:
           github-token: ${{ github.token }}
           script: |
-            const script = require('./.github/workflows/scripts/pr-description-check.js')
+            const script = require('./.github/workflows/scripts/pr-description-check.ts')
             await script({github, context, core})
