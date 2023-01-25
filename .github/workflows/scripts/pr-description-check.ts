@@ -5,7 +5,7 @@ module.exports = async ({ github, context, core }) => {
 	const COMMENT_FOOTER = "If this PR is not introducing any new keys, you may ignore this message."
 	const body = `${COMMENT_HEADER} \n${COMMENT_BODY} \n${COMMENT_FOOTER}`
 
-	const prBody = github.context.payload.pull_request.body;
+	const prBody = context.payload.pull_request.body;
 	var hasImage = imageRegex.test(prBody);
 
 
