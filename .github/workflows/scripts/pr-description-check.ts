@@ -4,7 +4,7 @@ module.exports = async ({ github, context, core }) => {
 	const COMMENT_BODY = "Image not found in the PR description. Please add an image to the PR description for every new key that you are adding. If you do not have an image, please request admin specifically."
 	const COMMENT_FOOTER = "If this PR is not introducing any new keys, you may ignore this message."
 	const body = `${COMMENT_HEADER} \n${COMMENT_BODY} \n${COMMENT_FOOTER}`
-const imageRegex = /https?:\/\/.*\.(?:png|jpg)/
+	const imageRegex = /https?:\/\/.*\.(?:png|jpg)/
 
 	const prBody = context.payload.pull_request.body;
 	var hasImage = imageRegex.test(prBody);
@@ -16,7 +16,7 @@ const imageRegex = /https?:\/\/.*\.(?:png|jpg)/
     //     issue_number: context.issue.number,
     // })
 	    // const currentComment = comments.find(comment => comment.body.startsWith(COMMENT_HEADER))
-    
+    core.notice("Startnew");
 	if (hasImage) {
 		core.notice("Image found in the PR description with updated import.");
 
@@ -30,10 +30,8 @@ const imageRegex = /https?:\/\/.*\.(?:png|jpg)/
 	    //     })
 	    // }
 	} else {
-
-
-		core.setFailed("Image not found in the PR description. Please add an image to the PR description for every new key that you are adding. If you do not have an image, please request admin specifically.");
 	
+		core.notice("Image not found in the PR description with updated import.");
 	    // If already commented, update it
         // if (currentComment) {
         //     github.rest.issues.updateComment({
@@ -52,5 +50,6 @@ const imageRegex = /https?:\/\/.*\.(?:png|jpg)/
                 body: body
             })
         // }
+		core.setFailed("Image not found in the PR description. Please add an image to the PR description for every new key that you are adding. If you do not have an image, please request admin specifically.");
 	    }
 }
