@@ -19,7 +19,7 @@ jobs:
       - name: Check PR Description
         uses: actions/github-script@v6.3.3
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const script = require('./.github/workflows/scripts/pr-description-check.ts')
             await script({github, context, core})
