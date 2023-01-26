@@ -1,11 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Check pr description image
 
 # Controls when the workflow will run
 on:
   pull_request:
     branches: [ "main" ]
+
+permissions:
+  issues: 'write' #__This fixed the HttpError: Resource not accessible by integration
 
 jobs:
   check-pr-description-validity:
