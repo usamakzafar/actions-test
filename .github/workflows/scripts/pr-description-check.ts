@@ -16,7 +16,7 @@ module.exports = async ({ github, context, core }) => {
     //     issue_number: context.issue.number,
     // })
 	    // const currentComment = comments.find(comment => comment.body.startsWith(COMMENT_HEADER))
-    core.notice("Startnew");
+    core.notice("Startnew Inshallah");
 	if (hasImage) {
 		core.notice("Image found in the PR description with updated import.");
 
