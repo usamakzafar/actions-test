@@ -6,6 +6,7 @@ name: Check pr description image
 on:
   pull_request:
     branches: [ "main" ]
+    types: [opened, edited, reopened]
 
 permissions:
   issues: 'write'
